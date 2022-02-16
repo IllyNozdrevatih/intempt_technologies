@@ -5,7 +5,18 @@ import {postRoutes} from "@/modules/posts/router";
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-   ...postRoutes
+   mode: "history",
+   routes: [
+      ...postRoutes,
+      {
+         path: '/drone',
+         name: 'DronePage',
+         // route level code-splitting
+         // this generates a separate chunk (about.[hash].js) for this route
+         // which is lazy-loaded when the route is visited.
+         component: () => import(/* webpackChunkName: "about" */ '@/views/DronePage.vue')
+      }
+   ]
 })
 
 export default router
