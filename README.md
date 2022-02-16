@@ -5,15 +5,15 @@
 npm install
 ```
 
+NODE 14.17.5
+
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Cypress tests (listen: http://localhost:8081/)
 ```
-npm run build
+npm run cypress:open
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
