@@ -10,17 +10,17 @@
               <div class="d-flex justify-content-between align-items-center mt-auto">
                 <div class="d-flex">
                   <div class="mr-2">
-                    <router-link style="width: 42px; height: 38px" :to="`/post/${postItem.id}/edit`" class="btn btn-primary mt-auto">
+                    <router-link :to="`/post/${postItem.id}/edit`" class="btn btn-primary mt-auto btn-edit">
                       <img src="/img/icons/pencil.svg" alt="pencil">
                     </router-link>
                   </div>
                   <div>
-                    <button style="width: 42px; height: 38px" @click="REMOVE_POST(postItem.id)" class="btn btn-primary mt-auto">
+                    <button @click="REMOVE_POST(postItem.id)" class="btn btn-primary mt-auto btn-remove">
                       <img src="/img/icons/trash.svg" alt="trash">
                     </button>
                   </div>
                 </div>
-                <router-link :to="`/post/${postItem.id}`" class="btn btn-primary mt-auto">Go somewhere</router-link>
+                <router-link :to="`/post/${postItem.id}`" class="btn btn-primary mt-auto btn-details">Go somewhere</router-link>
               </div>
             </div>
           </div>
@@ -42,8 +42,6 @@ export default {
     if (this.postList.length > 0) return
     try {
       await this.$store.dispatch('post/getPostList')
-      // const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts/')
-      // this.postList = data
     } catch (e) {
       console.log(e)
     }
@@ -56,3 +54,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.btn-remove, .btn-edit {
+  width: 42px;
+  height: 38px;
+}
+</style>

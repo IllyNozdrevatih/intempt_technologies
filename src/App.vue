@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Post list</router-link> |
-      <router-link to="/post/create">Post create</router-link>|
+      <router-link id="create-post-link" to="/post/create">Post create</router-link>|
       <router-link to="/drone">Drone page</router-link>
     </div>
     <router-view/>
